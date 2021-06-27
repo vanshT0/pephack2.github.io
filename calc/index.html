@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+      <title>Calculator</title>
+      <link rel="stylesheet" href="lightstyle.css" id="theme">
+  
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+     
+   </head>
+   <body>
+      <div class="container">   
+          <div class="title">Calculator</div>
+         
+          <button onclick="changeTheme()" id="dark-mode">
+            🌙
+          </button>
+         <form name="forms">
+            <input type="text" id="display" name="display" placeholder="Result" disabled >
+            <div class="buttons">
+               <input type="button" class ="clk" id="seven" value="7">
+               <input type="button" class ="clk" id="eight" value="8">
+               <input type="button" class ="clk" id="nine" value="9">
+               <input type="button" class ="clk" id="divide" value="/"><br>
+               <input type="button" class ="clk" id="four" value="4">
+               <input type="button" class ="clk" id="five" value="5">
+               <input type="button" class ="clk" id="six" value="6">
+               <input type="button" class ="clk" id="multi" value="*"><br>
+               <input type="button" class ="clk" id="one" value="1">
+               <input type="button" class ="clk" id="two" value="2">
+               <input type="button" class ="clk" id="three" value="3">
+               <input type="button" class ="clk" id="subs" value="-"><br>
+               <input type="button" class ="clk" id="dot" value=".">
+               <input type="button" class ="clk" id="zero" value="0">
+               <input type="button" class ="clk" id="add" value="+">
+               <input type="button" class ="clk" id="clear" value="C"><br>
+               <input type="button" class ="clk" id="equal" value="=">
+            </div>
+         </form>
+      </div>
+      <script>
+         $(document).ready(function(){
+           $('#one').click(function(){
+             document.forms.display.value += 1;
+           });
+           $('#two').click(function(){
+             document.forms.display.value += 2;
+           });
+           $('#three').click(function(){
+             document.forms.display.value += 3;
+           });
+           $('#four').click(function(){
+             document.forms.display.value += 4;
+           });
+           $('#five').click(function(){
+             document.forms.display.value += 5;
+           });
+           $('#six').click(function(){
+             document.forms.display.value += 6;
+           });
+           $('#seven').click(function(){
+             document.forms.display.value += 7;
+           });
+           $('#eight').click(function(){
+             document.forms.display.value += 8;
+           });
+           $('#nine').click(function(){
+             document.forms.display.value += 9;
+           });
+           $('#zero').click(function(){
+             document.forms.display.value += 0;
+           });
+           $('#add').click(function(){
+             document.forms.display.value += '+';
+           });
+           $('#subs').click(function(){
+             document.forms.display.value += '-';
+           });
+           $('#multi').click(function(){
+             document.forms.display.value += '*';
+           });
+           $('#divide').click(function(){
+             document.forms.display.value += '/';
+           });
+           $('#dot').click(function(){
+             document.forms.display.value += '.';
+           });
+           $('#equal').click(function(){
+             if (display.value == "") {
+               alert("Please enter any numbers to calculate!");
+             }else{
+               document.forms.display.value =
+               eval(document.forms.display.value);
+             }
+           });
+           $('#clear').click(function(){
+             document.forms.display.value = "";
+           });
+         })
+      </script>
+      
+      <script src="script.js"></script>
+   </body>
+</html>

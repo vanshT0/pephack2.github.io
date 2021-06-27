@@ -1,0 +1,21 @@
+
+    [{
+    "country": "Andorra",
+   
+    "name": "les Escaldes",
+    "subcountry": "Escaldes-Engordany"
+  },
+  {
+    "country": "Andorra",
+  
+    "name": "Andorra la Vella",
+    "subcountry": "Andorra la Vella"
+  },
+  {
+    "country": "United Arab Emirates",
+    
+    "name": "Umm al Qaywayn",
+    "subcountry": "Umm al Qaywayn"
+  }
+
+]

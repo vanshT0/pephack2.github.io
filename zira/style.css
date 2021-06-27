@@ -1,0 +1,347 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.snowflake {
+  color: rgba(250, 250, 250, 0.849);
+  font-size: 1.5em;
+  font-family: Arial;
+  text-shadow: 0 0 1px rgb(188, 255, 4);
+}
+
+@-webkit-keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@-webkit-keyframes snowflakes-shake {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes snowflakes-shake {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.snowflake {
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+  -webkit-animation-duration: 2s, 3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 6s, 3s; 
+  /* downfall time and horizontal */
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+.snowflake:nth-of-type(0) {
+  left: 1%;
+  -webkit-animation-delay: 0s, 0s;
+  animation-delay: 0s, 0s;
+}
+.snowflake:nth-of-type(1) {
+  left: 10%;
+  -webkit-animation-delay: 1s, 1s;
+  animation-delay: 1s, 1s;
+}
+.snowflake:nth-of-type(2) {
+  left: 20%;
+  -webkit-animation-delay: 6s, 0.5s;
+  animation-delay: 6s, 0.5s;
+}
+.snowflake:nth-of-type(3) {
+  left: 30%;
+  -webkit-animation-delay: 4s, 2s;
+  animation-delay: 4s, 2s;
+}
+.snowflake:nth-of-type(4) {
+  left: 40%;
+  -webkit-animation-delay: 2s, 2s;
+  animation-delay: 2s, 2s;
+}
+.snowflake:nth-of-type(5) {
+  left: 50%;
+  -webkit-animation-delay: 8s, 3s;
+  animation-delay: 8s, 3s;
+}
+.snowflake:nth-of-type(6) {
+  left: 60%;
+  -webkit-animation-delay: 6s, 2s;
+  animation-delay: 6s, 2s;
+}
+.snowflake:nth-of-type(7) {
+  left: 70%;
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s;
+}
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s;
+}
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 0s, 0s;
+}
+
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: url(wl.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.navbar {
+  height: 12vh;
+  background-color: rgba(51, 51, 51, 0.123);
+  display: flex;
+}
+
+.ticket-container {
+  height: 88vh;
+  /* background-color: #f2f2f2; */
+  position: relative;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+.filter-container,
+.add-delete-container {
+  height: 8vh;
+  margin-top: 2vh;
+  margin-left: 8vw;
+  border-radius: 3px;
+  
+}
+
+.filter-container {
+  width: 18vw;
+  display: flex;
+}
+
+.add-delete-container {
+  width: 9vw;
+  display: flex;
+}
+
+.filter {
+  height: 100%;
+  width: 25%;
+}
+
+.pink-color-btn,
+.blue-color-btn,
+.green-color-btn,
+.yellow-color-btn {
+  display: block;
+  width: 40%;
+  height: 40%;
+  border-radius: 3px;
+  margin-top: calc(8vh * 0.3);
+  margin-bottom: calc(8vh * 0.3);
+  margin-left: calc(4.5vw * 0.3);
+  margin-right: calc(4.5vw * 0.3);
+}
+
+.pink-color-btn,
+.modal-pink-filter,
+.ticket-color-pink {
+  background-color: pink;
+}
+
+.green-color-btn,
+.modal-green-filter,
+.ticket-color-green {
+  background-color: green;
+}
+
+.yellow-color-btn,
+.modal-yellow-filter,
+.ticket-color-yellow {
+  background-color: yellow;
+}
+
+.blue-color-btn,
+.modal-blue-filter,
+.ticket-color-blue {
+  background-color: blue;
+}
+
+
+
+.filter.active {
+  background-color: black;
+  
+}
+
+.tdo {
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 49px;
+  padding-left: 204px;
+  padding-right: 171px;
+}
+
+.add,
+.delete {
+  height: 100%;
+  width: 50%;
+}
+
+.action-btn {
+  display: block;
+  height: 40%;
+  width: 40%;
+  margin-top: calc(8vh * 0.3);
+  margin-bottom: calc(8vh * 0.3);
+  margin-left: calc(4.5vw * 0.3);
+  margin-right: calc(4.5vw * 0.3);
+  /* background-color: white; */
+  color: aliceblue;
+  padding-left: 3%;
+}
+
+.add:hover,
+.delete:hover,.filter:hover {
+  background-color: rgba(223, 210, 210, 0.589);
+  cursor: pointer;
+  transition: linear 600ms;
+  transform: scale(1.1);
+  
+}
+
+.modal {
+ 
+  height: 18rem;
+  width: 35rem;
+  background-color: rgba(255, 249, 249, 0.055);
+  display: flex;
+  position: absolute;
+  top: 10rem;
+  left: calc((100vw - 35rem) / 2);
+  
+  
+}
+
+.task-to-be-added {
+  width: 70%;
+  height: 100%;
+  padding: 3rem;
+  outline: none;
+  overflow: auto;
+  color: aliceblue;
+  font-size: 20px;
+  
+}
+
+.modal-priority-list {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  justify-content: space-between;
+  padding: 3rem;
+  background-color: rgba(255, 249, 249, 0.055);
+}
+
+.modal-filter {
+  width: 100%;
+  height: 20%;
+  border-radius: 21px;
+}
+
+.modal-filter:hover {
+
+  cursor: pointer;
+  transition: linear 300ms;
+  box-shadow: 0px 0px 30px 10px goldenrod;
+}
+
+.modal-filter.active {
+  transform: scale(1.1);
+  
+}
+
+.ticket {
+  height: 9rem;
+  width: 16rem;
+  background-color: white;
+  margin-bottom: 15px;
+  background-color: rgba(255, 249, 249, 0.055);
+}
+
+.ticket-color {
+  height: 6%;
+  width: 100%;
+}
+
+.ticket-id {
+  height: 15%;
+  width: 100%;
+  padding: 3%;
+  color: grey;
+}
+
+.task {
+  height: 79%;
+  width: 100%;
+  padding: 3%;
+  font-size: 21px;
+ color: white;
+}
+
+.ticket.active {
+  box-shadow: 0 0 3px 1px white;
+}
